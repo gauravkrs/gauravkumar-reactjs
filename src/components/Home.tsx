@@ -53,15 +53,15 @@ export const Home = () => {
                                 </Link>
                                 <div className="mt-4 flex justify-between">
                                     <div>
-                                        <h3 className="text-md text-gray-700">
+                                        <h3 className="text-md text-left text-gray-700">
                                             <span className="" />
                                             {el.name}
                                         </h3>
-                                        <p className="mt-1 text-sm text-gray-500">{el.category}</p>
+                                        <p className="mt-1 text-left text-sm text-gray-500">{el.category}</p>
                                     </div>
                                     <p className="text-md font-medium text-gray-900">₹ {el.price}</p>
                                 </div>
-                                <div><button>Delete</button></div>
+                                <div className='mt-2'><button className="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Delete</button></div>
                             </div>
                         )
                     })) : (dataDisplay?.map((el: any) => {
@@ -74,15 +74,15 @@ export const Home = () => {
                                 </Link>
                                 <div className="mt-4 flex justify-between">
                                     <div>
-                                        <h3 className="text-md text-gray-700">
+                                        <h3 className="text-md text-left text-gray-700">
                                             <span className="" />
                                             {el.name}
                                         </h3>
-                                        <p className="mt-1 text-sm text-gray-500">{el.category}</p>
+                                        <p className="mt-1 text-left text-sm text-gray-500">{el.category}</p>
                                     </div>
                                     <p className="text-md font-medium text-gray-900">₹ {el.price}</p>
                                 </div>
-                                <div><button>Delete</button></div>
+                                <div className='mt-2'><button className="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Delete</button></div>
                             </div>
                         )
                     }))}

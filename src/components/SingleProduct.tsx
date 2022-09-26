@@ -19,14 +19,14 @@ export const SingleProduct = () => {
                     <div className='min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80'>
                         <img className='w-full h-full ' src={res?.avatar} alt={res?.avatar} />
                     </div>
-                    <div className="mt-4 flex justify-between pl-5 pr-5">
+                    <div className="mt-4 flex justify-between pl-2 pr-2">
                         <h3>{res?.name}</h3>
                         <p>{res?.price}</p>
                     </div>
-                    <div className='text-left pl-5 pr-5'>
+                    <div className='text-left pl-2 pr-2'>
                         <p>{res?.category}</p>
                     </div>
-                    <div className='text-left pl-5 pr-5'>
+                    <div className='text-left pl-2 pr-2'>
                         <p>{res?.description}</p>
                     </div>
                 </div>
