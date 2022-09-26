@@ -1,22 +1,22 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { AddProduct } from './components/AddProduct';
+import { Home } from './components/Home';
+import { Navbar } from './components/Navbar';
+import { SingleProduct } from './components/SingleProduct';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/addProduct" element={<AddProduct />} />
+        <Route path="/products/:id" element={<SingleProduct />} />
+      </Routes>
+
     </div>
   );
 }
