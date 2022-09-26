@@ -13,9 +13,8 @@ const IProductAdd = {
 }
 
 export const AddProduct = () => {
-    const { data } = useGetAllCategoriesQuery()
-    const res = data?.categories
-    console.log(res)
+    const { data } = useGetAllCategoriesQuery();
+    const res = data?.categories;
     const [product, setProduct] = useState(IProductAdd);
     const navigate = useNavigate();
     const [addProduct] = useAddProductMutation()
@@ -26,7 +25,6 @@ export const AddProduct = () => {
         // console.log(value, name)
         setProduct({ ...product, [name]: value })
     }
-    console.log(product)
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -35,18 +33,21 @@ export const AddProduct = () => {
     }
 
     return (
-        <div>
-            <h2>Add Product</h2>
-            <div onSubmit={handleSubmit}>
-                <form>
+        <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+            <div className="w-full max-w-md space-y-8">
+                <div>
+                    <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Add Product</h2>
+                </div>
+
+                <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                     <div>
-                        <input type="text" name="name" placeholder='Name' onChange={handleChange} required />
+                        <input type="text" className='relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' name="name" placeholder='Name' onChange={handleChange} required />
                     </div>
                     <div>
-                        <input type="text" name="price" placeholder='Price' onChange={handleChange} required />
+                        <input type="text" className='relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' name="price" placeholder='Price' onChange={handleChange} required />
                     </div>
-                    <div>
-                        <select name="category" onChange={handleChange}>
+                    <div >
+                        <select className='relative text-center block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' name="category" onChange={handleChange}>
                             {
                                 res?.map((el) => {
                                     return (
@@ -59,20 +60,21 @@ export const AddProduct = () => {
                         </select>
                     </div>
                     <div>
-                        <input type="text" name="description" placeholder='Description' onChange={handleChange} required />
+                        <input type="text" className='relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' name="description" placeholder='Description' onChange={handleChange} required />
                     </div>
 
                     <div>
-                        <input type="text" name="avatar" onChange={handleChange} placeholder="link of avatar" required />
+                        <input type="text" className='relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' name="avatar" onChange={handleChange} placeholder="link of avatar" required />
                     </div>
                     <div>
-                        <input type="email" name="developerEmail" placeholder='Developer Email' onChange={handleChange} required />
+                        <input type="email"className='relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm' name="developerEmail" placeholder='Developer Email' onChange={handleChange} required />
                     </div>
                     <div>
-                        <input type="submit" value="Create Product" id="" />
+                        <input type="submit" className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" value="Create Product" id="" />
                     </div>
                 </form>
-            </div >
+            </div>
+
         </div >
     )
 }
