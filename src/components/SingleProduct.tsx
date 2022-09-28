@@ -21,7 +21,7 @@ export const SingleProduct = () => {
                     </div>
                     <div className="mt-4 flex justify-between pl-2 pr-2">
                         <h3>{res?.name}</h3>
-                        <p>{res?.price}</p>
+                        <p>₹ {res?.price}</p>
                     </div>
                     <div className='text-left pl-2 pr-2'>
                         <p>{res?.category}</p>
